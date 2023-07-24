@@ -46,8 +46,10 @@ export default function findPath(
     uniqueMoves.forEach((move) => {
       const coord = serializeCoord(move);
       if (visited[coord]) {
-        //if we have visited this coord before ...
-        // and the highest success/failure is greater than the current time
+        /*
+         * If we have visited this coord before and the highest
+         * success / failure is greater than the currentTime
+         */
         if (
           currentTime > visited[coord].highestFail ||
           currentTime > visited[coord].highestSuccess
@@ -71,16 +73,16 @@ function mapFail(currentTime: number, path: number[][]) {}
 function uniqueMove(x: number, y: number, prev) {
   const tiles: [number[], string][] = [];
   function moveUp() {
-    tiles.push([[x + 1, y], "right"]); // right
+    tiles.push([[x + 1, y], "right"]);
   }
   function moveDown() {
-    tiles.push([[x, y + 1], "down"]); // down
+    tiles.push([[x, y + 1], "down"]);
   }
   function moveLeft() {
-    tiles.push([[x - 1, y], "left"]); // left
+    tiles.push([[x - 1, y], "left"]);
   }
   function moveRight() {
-    tiles.push([[x, y - 1], "up"]); // up
+    tiles.push([[x, y - 1], "up"]);
   }
   switch (prev) {
     case "up":
