@@ -1,4 +1,3 @@
-//this is the function that will take the call
 interface VisitedInterface {
   [key: string]: {
     validPaths: number; // number of valid paths for this square
@@ -66,9 +65,21 @@ function serializeCoord(xy) {
   return xy.join(",");
 }
 
-function mapPass(currentTime: number, path: number[][]) {}
+function mapPass(currentTime: number, path: number[][]) {
+  /*
+   * TODO:
+   * iterate over array in reverse, and if the current time is greater than the highest success
+   * then we mutate the highest success to be the current time
+   */
+}
 
-function mapFail(currentTime: number, path: number[][]) {}
+function mapFail(currentTime: number, path: number[][]) {
+  /*
+   * TODO:
+   * iterate over array in reverse, and if the current time is greater than the highest fail
+   * then we mutate the highest fail to be the current time
+   */
+}
 
 function uniqueMove(x: number, y: number, prev) {
   const tiles: [number[], string][] = [];
